@@ -1,0 +1,6 @@
+const IS_MOBILE_TYPES = {
+  IS_MOBILE: 'IS_MOBILE',
+  IS_NOT_MOBILE: 'IS_NOT_MOBILE',
+};
+
+export default IS_MOBILE_TYPES;
