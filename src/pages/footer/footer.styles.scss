@@ -1,0 +1,21 @@
+@import '../../partials.scss';
+
+.footer {
+  @include global-spacing();
+  background: url('../../svg/logo-icon-transparent.svg') no-repeat;
+  background-position: 10%;
+  background-size: 50%;
+  border-top: 2px solid rgba(53, 95, 143, 0.1);
+  position: sticky;
+  bottom: 0;
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 10%;
+
+    div:last-child {
+      grid-row: 3;
+    }
+  }
+}

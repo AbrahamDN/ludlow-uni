@@ -11,6 +11,7 @@ import './App.scss';
 
 import Navbar from './components/navbar/navbar.component';
 import Homepage from './pages/homepage/homepage.component';
+import Footer from './pages/footer/footer.component';
 
 const App = ({ dispatchIsMobile, dispatchIsNotMobile }) => {
   const [windowSize, setWindowSize] = useState(window.innerWidth);
@@ -28,12 +29,13 @@ const App = ({ dispatchIsMobile, dispatchIsNotMobile }) => {
 
   return (
     <div className='App'>
-      <div className='navbar-wrapper'>
-        <Navbar />
+      <Navbar className='navbar-wrapper' />
+      <div className='page-wrapper'>
+        <Switch>
+          <Route path='/' component={Homepage} />
+        </Switch>
       </div>
-      <Switch>
-        <Route path='/' component={Homepage} />
-      </Switch>
+      <Footer className='footer-wrapper' />
     </div>
   );
 };

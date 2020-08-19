@@ -7,6 +7,10 @@ html {
     margin: 0;
     padding: 0;
   }
+  &,
+  body {
+    min-height: 100%;
+  }
 }
 
 body {
@@ -16,6 +20,7 @@ body {
   line-height: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 h1,
