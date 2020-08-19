@@ -1,2 +1,10 @@
+@import './partials.scss';
+
 .App {
+  overflow-x: hidden;
+}
+
+.navbar-wrapper {
+  @include global-spacing();
+  position: relative;
 }

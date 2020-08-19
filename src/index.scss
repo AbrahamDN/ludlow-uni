@@ -1,21 +1,21 @@
 @import './fonts/fonts.scss';
+@import './partials.scss';
 
 html {
   * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
   }
 }
 
 body {
+  color: $dark-grey;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
+  line-height: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  &,
-  p {
-    font-family: 'Fira Sans', sans-serif;
-  }
 }
 
 h1,
@@ -30,22 +30,21 @@ a {
 
 h1 {
   font-size: 56px;
+  text-transform: uppercase;
+  line-height: 64px;
 }
 h2 {
   font-size: 40px;
+  line-height: 56px;
 }
 h3 {
   font-size: 24px;
+  line-height: 48px;
 }
 
 .link,
 a {
   font-size: 20px;
-}
-
-cite {
-  font-size: 14px;
-  font-style: inherit;
 }
 
 ul {
@@ -56,6 +55,6 @@ a {
   color: inherit;
   text-decoration: none;
   &:hover {
-    color: #ff227f;
+    color: $pink;
   }
 }

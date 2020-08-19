@@ -9,6 +9,7 @@ import {
 
 import './App.scss';
 
+import Navbar from './components/navbar/navbar.component';
 import Homepage from './pages/homepage/homepage.component';
 
 const App = ({ dispatchIsMobile, dispatchIsNotMobile }) => {
@@ -27,6 +28,9 @@ const App = ({ dispatchIsMobile, dispatchIsNotMobile }) => {
 
   return (
     <div className='App'>
+      <div className='navbar-wrapper'>
+        <Navbar />
+      </div>
       <Switch>
         <Route path='/' component={Homepage} />
       </Switch>

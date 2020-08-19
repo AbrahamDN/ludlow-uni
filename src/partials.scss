@@ -1,0 +1,18 @@
+@mixin flex-position($vertical: auto, $horizontal: auto) {
+  display: flex;
+  align-items: $vertical;
+  justify-content: $horizontal;
+  flex-wrap: wrap;
+}
+
+@mixin global-spacing($verticle: 2.5%, $horizontal: 5%) {
+  padding: $verticle $horizontal;
+}
+
+$white: #fff;
+$dark-grey: #333333;
+$pink: #ff227f;
+$hot-frost: linear-gradient(98.01deg, #00c2ff 14.16%, #ff27c3 79.91%);
+$slate: #3c444d;
+$teal: #48e3da;
+$cool-frost: linear-gradient(98.01deg, #2dc5f5 14.16%, #48e3da 79.91%);
