@@ -1,0 +1,51 @@
+@import '../../partials.scss';
+
+.card {
+  .card-wrap {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .card-img {
+      height: 52vw;
+      width: 100%;
+      max-height: calc(520px * 1.2);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-content {
+      background: $white;
+      width: 60%;
+      min-width: 215px;
+      margin-top: -5em;
+      margin-left: -1pt;
+      position: sticky;
+      @include global-spacing();
+      position: relative;
+
+      a h3::after {
+        content: url('../../svg/arrow.svg');
+        position: absolute;
+        margin-left: 1em;
+      }
+
+      p {
+        margin-top: 1em;
+        // width: calc(35ch - 10%);
+      }
+    }
+  }
+
+  .mobile {
+    &.card-content {
+      margin-top: 0;
+      width: 100%;
+      p {
+        width: 100%;
+      }
+    }
+  }
+}

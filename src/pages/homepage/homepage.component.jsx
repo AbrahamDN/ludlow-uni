@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './homepage.styles.scss';
+import Card from '../../components/card/card.component';
 
 const Homepage = ({ isMobile }) => {
+  const mapCardComponents = data => {
+    return data.map((cardProps, i) => <Card key={'card' + i} {...cardProps} />);
+  };
+
   return (
     <div className='homepage'>
       <header className='header'>
@@ -34,28 +38,28 @@ const Homepage = ({ isMobile }) => {
       </header>
 
       <section className='blog-section'>
-        <div className='card'>
-          <div className='card-wrap'>
-            <div
-              className='card-img'
-              style={{
-                backgroundImage: `url('assets/jpg/activities_and_clubs.jpg')`,
-              }}></div>
-            <div className={`card-content ${isMobile ? 'mobile' : ''}`}>
-              <Link to='/'>
-                <h3>Activities and clubs</h3>
-              </Link>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt.
-              </p>
-            </div>
-          </div>
+        <div className={`card-wrapper ${isMobile ? 'mobile' : ''}`}>
+          {mapCardComponents(BLOGS_DATA)}
         </div>
       </section>
     </div>
   );
 };
+
+const BLOGS_DATA = [
+  {
+    image: '/assets/jpg/activities_and_clubs.jpg',
+    title: 'Activities and clubs',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+  },
+  {
+    image: '/assets/jpg/accommodation.jpg',
+    title: 'Accommodation',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+  },
+];
 
 const mapStateToProps = state => ({
   isMobile: state.isMobile,

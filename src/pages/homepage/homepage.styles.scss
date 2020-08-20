@@ -60,59 +60,17 @@
 }
 
 section {
-  @include global-spacing();
+  @include global-spacing(5em);
 }
 
 .blog-section {
-  .card-wrap {
-    position: relative;
+  .card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr fit-content(40%);
+    grid-gap: 2em;
 
-    img {
-      width: 100%;
+    &.mobile {
+      grid-template-columns: 1fr;
     }
-
-    .card-img {
-      height: calc(520px / 2);
-      width: 100%;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-content {
-      background: $white;
-      width: 45ch;
-      margin-top: -5em;
-      position: sticky;
-      @include global-spacing();
-      position: relative;
-
-      a h3::after {
-        content: url('../../svg/arrow.svg');
-        position: absolute;
-        margin-left: 1em;
-      }
-
-      p {
-        margin-top: 1em;
-      }
-    }
-  }
-
-  .mobile {
-    &.card-content {
-      margin-top: 0;
-      width: 100%;
-    }
-  }
-}
-
-@keyframes bgZoomIn {
-  0% {
-    background-size: 120%;
-    background-position: 20%;
-  }
-  100% {
-    background-position: 80%;
-    background-size: 150%;
   }
 }
