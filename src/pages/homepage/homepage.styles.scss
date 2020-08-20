@@ -55,11 +55,10 @@
       object-fit: cover;
       object-position: top center;
       height: -webkit-fill-available;
-      transition: all 1s cubic-bezier(0.39, 0.57, 0.66, 0.92);
+      transition: all 1s ease-in-out;
 
       &:hover {
-        transform: scale(1.25);
-        object-position: -8ch top;
+        transform: scale(1.25) translateX(-10%);
       }
     }
   }
