@@ -42,6 +42,12 @@ const Homepage = ({ isMobile }) => {
           {mapCardComponents(BLOGS_DATA)}
         </div>
       </section>
+
+      <section className='articles-section'>
+        <div className={`card-wrapper ${isMobile ? 'mobile' : ''}`}>
+          {mapCardComponents(ARTICLES_DATA)}
+        </div>
+      </section>
     </div>
   );
 };
@@ -58,6 +64,30 @@ const BLOGS_DATA = [
     title: 'Accommodation',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+  },
+];
+
+const ARTICLES_DATA = [
+  {
+    image: '/assets/jpg/chat-to-student.jpg',
+    title: 'Chat to a student',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    type: 'article',
+  },
+  {
+    image: '/assets/jpg/support.jpg',
+    title: 'Support',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    type: 'article',
+  },
+  {
+    image: '/assets/jpg/life-in-ludlow.jpg',
+    title: 'Life in Ludlow',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    type: 'article',
   },
 ];
 

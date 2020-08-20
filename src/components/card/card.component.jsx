@@ -5,12 +5,11 @@ import { connect } from 'react-redux';
 
 import './card.styles.scss';
 
-const Card = ({ isMobile, image, title, description, type = 'blog' }) => {
-  console.log(typeof image);
+const Card = ({ isMobile, image, title, description, type }) => {
   return (
     <div>
       <div className='card'>
-        <div className='card-wrap'>
+        <div className={'card-wrap ' + type}>
           <div
             className='card-img'
             style={{

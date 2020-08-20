@@ -60,13 +60,26 @@
 }
 
 section {
-  @include global-spacing(5em);
+  @include global-spacing(5%);
 }
 
 .blog-section {
+  padding-top: 5em;
   .card-wrapper {
     display: grid;
     grid-template-columns: 1fr fit-content(40%);
+    grid-gap: 2em;
+
+    &.mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.articles-section {
+  .card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 2em;
 
     &.mobile {

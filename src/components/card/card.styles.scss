@@ -37,6 +37,13 @@
         // width: calc(35ch - 10%);
       }
     }
+
+    &.article {
+      .card-content {
+        width: 100%;
+        margin: 0;
+      }
+    }
   }
 
   .mobile {
