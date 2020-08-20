@@ -12,7 +12,7 @@
 $white: #fff;
 $dark-grey: #333333;
 $pink: #ff227f;
-$hot-frost: linear-gradient(98.01deg, #00c2ff 14.16%, #ff27c3 79.91%);
 $slate: #3c444d;
 $teal: #48e3da;
-$cool-frost: linear-gradient(98.01deg, #2dc5f5 14.16%, #48e3da 79.91%);
+$hot-frost: linear-gradient(98.01deg, #00c2ff 14.16%, $pink 79.91%);
+$cool-frost: linear-gradient(98.01deg, #2dc5f5 14.16%, $teal 79.91%);

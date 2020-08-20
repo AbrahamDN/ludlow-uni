@@ -22,7 +22,6 @@
       min-width: 245px;
       margin-top: -5em;
       margin-left: -1pt;
-      position: sticky;
       @include global-spacing();
       position: relative;
 
@@ -42,6 +41,41 @@
       .card-content {
         width: 100%;
         margin: 0;
+      }
+    }
+
+    &.event {
+      color: $white;
+      cursor: pointer;
+
+      .card-date {
+        position: absolute;
+        text-align: center;
+        background: $white;
+        @include global-spacing(2em, 4em);
+
+        h1 {
+          color: $pink;
+        }
+
+        h2 {
+          font-weight: lighter;
+          color: $slate;
+        }
+      }
+
+      .card-img {
+        height: 90vh;
+        max-height: inherit;
+        background-position: top center;
+      }
+      .card-content {
+        position: absolute;
+        width: 100%;
+        min-width: 100%;
+        margin: 0;
+        bottom: 2em;
+        background: rgba(0, 0, 0, 0);
       }
     }
   }

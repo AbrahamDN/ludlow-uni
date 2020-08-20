@@ -59,6 +59,16 @@ const Homepage = ({ isMobile }) => {
           <button>Book an Open Day</button>
         </div>
       </section>
+
+      <section className='events-section'>
+        <div className={isMobile ? 'mobile' : ''}>
+          <h2>Upcoming events</h2>
+          <button>View all events</button>
+        </div>
+        <div className={`card-wrapper ${isMobile ? 'mobile' : ''}`}>
+          {mapCardComponents(EVENTS_DATA)}
+        </div>
+      </section>
     </div>
   );
 };
@@ -99,6 +109,27 @@ const ARTICLES_DATA = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
     type: 'article',
+  },
+];
+
+const EVENTS_DATA = [
+  {
+    image: '/assets/jpg/event_image-1.jpg',
+    title: 'Ludlow campus rock festival 2019',
+    date: { day: '01', month: 'AUG' },
+    type: 'event',
+  },
+  {
+    image: '/assets/jpg/event_image-2.jpg',
+    title: '2019 game design exhibition',
+    date: { day: '14', month: 'AUG' },
+    type: 'event',
+  },
+  {
+    image: '/assets/jpg/event_image-3.jpg',
+    title: 'Study collaboration session ',
+    date: { day: '21', month: 'AUG' },
+    type: 'event',
   },
 ];
 
