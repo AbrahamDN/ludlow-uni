@@ -1,1 +1,39 @@
 @import '../../partials.scss';
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2em;
+  min-height: 90vh;
+  @include global-spacing(6em);
+
+  .header-content {
+    @include flex-position(center, center);
+
+    .header-content-wrap {
+      display: grid;
+      grid-gap: 2em;
+    }
+  }
+
+  .header-hero,
+  .hero-content {
+    height: 100%;
+  }
+
+  .first_grid {
+    grid-row: 1;
+    padding-top: 5%;
+  }
+
+  .hero-content {
+    object-fit: contain;
+    background-size: cover;
+    background-position: top center;
+    min-height: calc(624px / 2);
+
+    & > img {
+      margin: 5%;
+    }
+  }
+}

@@ -29,7 +29,8 @@ h3,
 h4,
 h5,
 h6,
-a {
+a,
+button {
   font-family: 'Oswald', sans-serif;
 }
 
@@ -61,5 +62,56 @@ a {
   text-decoration: none;
   &:hover {
     color: $pink;
+  }
+}
+
+button {
+  $borderPositionCalc: -2px;
+  $borderSizeCalc: calc(100% + 4px);
+
+  font-size: 20px;
+  background: $white;
+  width: fit-content;
+  height: fit-content;
+  @include global-spacing($horizontal: 10%);
+  border: none;
+  background: #fff;
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(
+      130deg,
+      #00c2ff,
+      #ff27c3,
+      #48e3da,
+      #2dc5f5
+    );
+    background-size: 300%;
+    top: $borderPositionCalc;
+    left: $borderPositionCalc;
+    height: $borderSizeCalc;
+    width: $borderSizeCalc;
+    z-index: -1;
+  }
+
+  &:hover {
+    &::after {
+      animation: animatedGradient 3s alternate infinite;
+    }
+  }
+}
+
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
   }
 }

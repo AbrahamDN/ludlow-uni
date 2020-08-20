@@ -1,16 +1,14 @@
 @import './partials.scss';
 
 .App {
-  overflow-x: hidden;
+  overflow: hidden;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-}
-
-.navbar-wrapper {
-  @include global-spacing();
   position: relative;
 }
 
-.footer-wrapper {
+.navbar-wrapper {
+  position: fixed;
+  width: 100vw;
 }

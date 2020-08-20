@@ -5,7 +5,7 @@
   flex-wrap: wrap;
 }
 
-@mixin global-spacing($verticle: 2.5%, $horizontal: 5%) {
+@mixin global-spacing($verticle: 1em, $horizontal: 5%) {
   padding: $verticle $horizontal;
 }
 

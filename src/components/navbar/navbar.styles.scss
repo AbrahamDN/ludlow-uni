@@ -1,6 +1,7 @@
 @import '../../partials.scss';
 
 $menu-btn-width: 2em;
+$navbar-bg: rgba(255, 255, 255, 0.9);
 
 @mixin menu-btn_lines {
   background: $dark-grey;
@@ -11,9 +12,12 @@ $menu-btn-width: 2em;
 }
 
 .navbar {
+  @include global-spacing();
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 10px;
+  background: $navbar-bg;
+  position: relative;
   z-index: 999;
 
   ul,
@@ -46,7 +50,7 @@ $menu-btn-width: 2em;
   .menu-navLinks {
     position: absolute;
     top: 100%;
-    background: $white;
+    background: $navbar-bg;
     left: 0;
     width: 100%;
     border-bottom: 4px solid $pink;
