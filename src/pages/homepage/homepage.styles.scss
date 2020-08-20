@@ -6,7 +6,7 @@
   grid-gap: 2em;
   min-height: 90vh;
   max-height: 1024px;
-  width: 102%;
+  width: 100%;
   @include global-spacing();
 
   .header-content {
@@ -41,7 +41,7 @@
       content: url('../../svg/logo-badge.svg');
       position: absolute;
       top: 1em;
-      left: 2em;
+      left: 5%;
     }
 
     .hero-img {
@@ -55,6 +55,53 @@
         transform: scale(1.25);
         object-position: -8ch top;
       }
+    }
+  }
+}
+
+section {
+  @include global-spacing();
+}
+
+.blog-section {
+  .card-wrap {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .card-img {
+      height: calc(520px / 2);
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-content {
+      background: $white;
+      width: 45ch;
+      margin-top: -5em;
+      position: sticky;
+      @include global-spacing();
+      position: relative;
+
+      a h3::after {
+        content: url('../../svg/arrow.svg');
+        position: absolute;
+        margin-left: 1em;
+      }
+
+      p {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  .mobile {
+    &.card-content {
+      margin-top: 0;
+      width: 100%;
     }
   }
 }

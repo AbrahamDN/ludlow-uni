@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import './homepage.styles.scss';
 
 const Homepage = ({ isMobile }) => {
@@ -30,6 +32,27 @@ const Homepage = ({ isMobile }) => {
           </div>
         </div>
       </header>
+
+      <section className='blog-section'>
+        <div className='card'>
+          <div className='card-wrap'>
+            <div
+              className='card-img'
+              style={{
+                backgroundImage: `url('assets/jpg/activities_and_clubs.jpg')`,
+              }}></div>
+            <div className={`card-content ${isMobile ? 'mobile' : ''}`}>
+              <Link to='/'>
+                <h3>Activities and clubs</h3>
+              </Link>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
