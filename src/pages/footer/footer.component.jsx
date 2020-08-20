@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './footer.styles.scss';
 
@@ -8,24 +9,24 @@ import linkedIn from '../../svg/Social/Linkedin.svg';
 import google from '../../svg/Social/Google.svg';
 import facebook from '../../svg/Social/Facebook.svg';
 
-const Footer = ({ ...props }) => {
+const Footer = ({ isMobile }) => {
   return (
-    <div {...props}>
-      <div className='footer'>
-        <div className='footer-content'>
+    <div className='footer'>
+      <div className={`footer-content ${isMobile ? 'mobile' : ''}`}>
+        <div>
           <div>
             <Logo />
           </div>
           <div className='footer-twitter'>
-            <p>Twitter Embed</p>
+            <img src='/assets/png/Twitter embed.png' alt='Twitter embed' />
           </div>
-          <div className='footer-socials'>
-            <div className='footer-socials-list'>
-              <img src={twitter} alt='Twitter' />
-              <img src={linkedIn} alt='Linked-In' />
-              <img src={google} alt='Google' />
-              <img src={facebook} alt='Facebook' />
-            </div>
+        </div>
+        <div className='footer-socials'>
+          <div className='footer-socials-list'>
+            <img src={twitter} alt='Twitter' />
+            <img src={linkedIn} alt='Linked-In' />
+            <img src={google} alt='Google' />
+            <img src={facebook} alt='Facebook' />
           </div>
         </div>
       </div>
@@ -33,4 +34,8 @@ const Footer = ({ ...props }) => {
   );
 };
 
-export default Footer;
+const mapStateToProps = state => ({
+  isMobile: state.isMobile,
+});
+
+export default connect(mapStateToProps)(Footer);
