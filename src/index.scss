@@ -65,15 +65,24 @@ a {
   }
 }
 
+hr {
+  width: 5em;
+  border: 1px solid;
+  border-image: $hot-frost;
+  border-image-slice: 1;
+}
+
 button {
   $borderPositionCalc: -1px;
   $borderSizeCalc: calc(100% + 2px);
 
+  cursor: pointer;
+  color: inherit;
   font-size: 20px;
   background: $white;
   width: fit-content;
   height: fit-content;
-  @include global-spacing($horizontal: 10%);
+  @include global-spacing($horizontal: 15%);
   border: none;
   background: rgba(255, 255, 255, 0);
   position: relative;
@@ -89,10 +98,10 @@ button {
       0% 0%,
       0% 100%,
       0.5% 100%,
-      0.5% 2%,
-      99.5% 2%,
-      99.5% 97%,
-      0% 97%,
+      0.5% 2px,
+      99.5% 2px,
+      99.5% 98%,
+      0% 98%,
       0% 100%,
       100% 100%,
       100% 0%
@@ -109,7 +118,6 @@ button {
     left: $borderPositionCalc;
     height: $borderSizeCalc;
     width: $borderSizeCalc;
-    z-index: -1;
   }
 
   &:hover {

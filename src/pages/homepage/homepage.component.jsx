@@ -48,6 +48,17 @@ const Homepage = ({ isMobile }) => {
           {mapCardComponents(ARTICLES_DATA)}
         </div>
       </section>
+
+      <section className='cta_banner-section'>
+        <div className={isMobile ? 'mobile' : ''}>
+          <hr />
+          <h2>
+            Come along to one of our Open Days and find out everything you need
+            to know about the campus, courses, and facilities
+          </h2>
+          <button>Book an Open Day</button>
+        </div>
+      </section>
     </div>
   );
 };
