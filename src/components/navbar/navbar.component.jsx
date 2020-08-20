@@ -6,7 +6,7 @@ import { ReactComponent as SearchIcon } from '../../svg/search-icon.svg';
 
 import './navbar.styles.scss';
 
-const Navbar = ({ isMobile, ...props }) => {
+const Navbar = ({ isMobile }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuBtnRef = useRef();
 
@@ -31,35 +31,33 @@ const Navbar = ({ isMobile, ...props }) => {
   );
 
   return (
-    <div {...props}>
-      <nav className='navbar'>
-        <div className='logo-wrapper'>
-          <Link to='/'>
-            <Logo />
-          </Link>
-        </div>
-        <div className='navLists'>
-          {isMobile ? (
-            <div className='menu'>
-              <div
-                className='menu-btn'
-                ref={menuBtnRef}
-                onClick={() => setMenuOpen(!menuOpen)}>
-                <div className='menu-btn_burger'></div>
-              </div>
-              <div className={`menu-navLinks ${menuOpen ? 'open' : 'close'}`}>
-                {menuOpen ? navLinks : null}
-              </div>
+    <nav className='navbar'>
+      <div className='logo-wrapper'>
+        <Link to='/'>
+          <Logo />
+        </Link>
+      </div>
+      <div className='navLists'>
+        {isMobile ? (
+          <div className='menu'>
+            <div
+              className='menu-btn'
+              ref={menuBtnRef}
+              onClick={() => setMenuOpen(!menuOpen)}>
+              <div className='menu-btn_burger'></div>
             </div>
-          ) : (
-            navLinks
-          )}
-          <div className='search_icon-wrapper'>
-            <SearchIcon />
+            <div className={`menu-navLinks ${menuOpen ? 'open' : 'close'}`}>
+              {menuOpen ? navLinks : null}
+            </div>
           </div>
+        ) : (
+          navLinks
+        )}
+        <div className='search_icon-wrapper'>
+          <SearchIcon />
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 

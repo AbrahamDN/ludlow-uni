@@ -5,7 +5,9 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 2em;
   min-height: 90vh;
-  @include global-spacing(6em);
+  max-height: 1024px;
+  width: 102%;
+  @include global-spacing();
 
   .header-content {
     @include flex-position(center, center);
@@ -29,11 +31,41 @@
   .hero-content {
     object-fit: contain;
     background-size: cover;
-    background-position: top center;
+    background-position: center 20%;
     min-height: calc(624px / 2);
+    position: relative;
+    overflow: hidden;
+    @include flex-position(center, center);
 
-    & > img {
-      margin: 5%;
+    &::after {
+      content: url('../../svg/logo-badge.svg');
+      position: absolute;
+      top: 1em;
+      left: 2em;
     }
+
+    .hero-img {
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
+      height: -webkit-fill-available;
+      transition: all 1s cubic-bezier(0.39, 0.57, 0.66, 0.92);
+
+      &:hover {
+        transform: scale(1.25);
+        object-position: -8ch top;
+      }
+    }
+  }
+}
+
+@keyframes bgZoomIn {
+  0% {
+    background-size: 120%;
+    background-position: 20%;
+  }
+  100% {
+    background-position: 80%;
+    background-size: 150%;
   }
 }

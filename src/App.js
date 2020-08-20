@@ -29,7 +29,9 @@ const App = ({ dispatchIsMobile, dispatchIsNotMobile }) => {
 
   return (
     <div className='App'>
-      <Navbar className='navbar-wrapper' />
+      <div className='navbar-wrapper'>
+        <Navbar />
+      </div>
       <div className='page-wrapper'>
         <Switch>
           <Route path='/' component={Homepage} />

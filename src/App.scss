@@ -8,7 +8,21 @@
   position: relative;
 }
 
+.page-wrapper {
+  padding: 5em 0;
+}
+
 .navbar-wrapper {
   position: fixed;
   width: 100vw;
+  z-index: 999;
+}
+
+.footer-wrapper {
+  display: flex;
+  align-items: flex-end;
+
+  .footer {
+    flex-grow: 1;
+  }
 }

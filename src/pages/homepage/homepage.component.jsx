@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './homepage.styles.scss';
 
-import badge from '../../svg/logo-badge.svg';
-
 const Homepage = ({ isMobile }) => {
   return (
     <div className='homepage'>
@@ -23,10 +21,12 @@ const Homepage = ({ isMobile }) => {
           </div>
         </div>
         <div className={`header-hero ${isMobile ? 'first_grid' : ''}`}>
-          <div
-            className='hero-content'
-            style={{ backgroundImage: `url('/assets/jpg/hero-image.jpg')` }}>
-            <img src={badge} alt='Logo badge' />
+          <div className='hero-content'>
+            <img
+              className='hero-img'
+              src='/assets/jpg/hero-image.jpg'
+              alt='Hero'
+            />
           </div>
         </div>
       </header>
