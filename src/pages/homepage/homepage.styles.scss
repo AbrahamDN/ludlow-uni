@@ -6,11 +6,6 @@
   grid-gap: 2em;
 }
 
-.homepage {
-  display: grid;
-  grid-template-rows: 1fr;
-}
-
 .header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
