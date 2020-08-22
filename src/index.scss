@@ -1,6 +1,8 @@
 @import './partials.scss';
 
 html {
+  font-size: calc(2px + 1vw);
+
   * {
     box-sizing: border-box;
     margin: 0;
@@ -15,11 +17,15 @@ html {
 body {
   color: $dark-grey;
   font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+
   // -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smoothing: grayscale;
   position: relative;
+  overflow-x: hidden;
+
+  * {
+    line-height: calc(1em + 1vw);
+  }
 }
 
 h1,
@@ -34,22 +40,21 @@ button {
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 3.4em;
   text-transform: uppercase;
-  line-height: 64px;
 }
 h2 {
-  font-size: 40px;
-  line-height: 56px;
+  font-size: 2.45em;
 }
 h3 {
-  font-size: 24px;
-  line-height: 48px;
+  font-size: 1.45em;
 }
 
 .link,
-a {
-  font-size: 20px;
+a,
+cite,
+button {
+  font-size: 1.22em;
 }
 
 ul {
@@ -71,13 +76,16 @@ hr {
   border-image-slice: 1;
 }
 
+img {
+  width: 100%;
+}
+
 button {
   $borderPositionCalc: -1px;
   $borderSizeCalc: calc(100% + 2px);
 
   cursor: pointer;
   color: inherit;
-  font-size: 20px;
   background: $white;
   width: fit-content;
   height: fit-content;
@@ -132,5 +140,32 @@ button {
   }
   100% {
     background-position: 100% 50%;
+  }
+}
+
+// Mobile
+
+.mobile {
+  &,
+  p {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 56px;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+
+  .link,
+  a,
+  cite,
+  button {
+    font-size: 20px;
   }
 }

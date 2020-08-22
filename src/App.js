@@ -17,10 +17,23 @@ const App = ({ dispatchIsMobile, dispatchIsNotMobile }) => {
   const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   const handleResize = () => {
+    const getDocument = document.documentElement;
+    const vh = window.innerHeight;
+    const navBarHeight = getComputedStyle(document.querySelector('.navbar'))
+      .height;
+    const headerHeight = getComputedStyle(
+      document.querySelector('.header-content')
+    ).height;
+
+    getDocument.style.setProperty('--vh', `${vh}px`);
+    getDocument.style.setProperty('--navbar-height', `${navBarHeight}`);
+    getDocument.style.setProperty('--header-height', `${headerHeight}`);
+
     setWindowSize(window.innerWidth);
   };
 
   useEffect(() => {
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     if (windowSize <= 650) dispatchIsMobile();
