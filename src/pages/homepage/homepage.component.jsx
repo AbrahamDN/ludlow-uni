@@ -47,6 +47,10 @@ const Homepage = ({ isMobile }) => {
         <div className='blog-section'>
           <div className='card-wrapper'>{mapCardComponents(BLOGS_DATA)}</div>
         </div>
+
+        <div className='articles-section'>
+          <div className='card-wrapper'>{mapCardComponents(ARTICLES_DATA)}</div>
+        </div>
       </section>
 
       <section>
@@ -66,14 +70,12 @@ const BLOGS_DATA = [
     title: 'Activities and clubs',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-    type: 'blog',
   },
   {
     image: '/assets/jpg/accommodation.jpg',
     title: 'Accommodation',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-    type: 'blog',
   },
 ];
 

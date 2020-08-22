@@ -6,10 +6,10 @@ import arrow from '../../svg/arrow.svg';
 
 import './card.styles.scss';
 
-const Card = ({ isMobile, image, title, description, date, type }) => {
+const Card = ({ isMobile, image, title, description, date, type = 'blog' }) => {
   return (
     <div>
-      <div className='card'>
+      <div className={`card ${isMobile ? 'mobile' : ''}`}>
         <div className={`card-wrap ${type || ''}`}>
           {date ? (
             <div className='card-date'>
@@ -25,7 +25,7 @@ const Card = ({ isMobile, image, title, description, date, type }) => {
             }}
           />
 
-          <div className={`card-content ${isMobile ? 'mobile' : ''}`}>
+          <div className='card-content'>
             <Link to='/'>
               {type === 'event' ? (
                 <h2>{title}</h2>

@@ -40,9 +40,16 @@
     }
 
     &.article {
+      .card-img {
+        height: calc(506px * 1.2);
+      }
+
       .card-content {
-        width: 100%;
+        width: 102%;
         margin: 0;
+        margin-left: -2px;
+        position: absolute;
+        bottom: 0;
       }
     }
 
@@ -82,12 +89,26 @@
     }
   }
 
-  .mobile {
-    &.card-content {
+  &.mobile {
+    .card-content {
       margin-top: 0;
       width: 100%;
+      @include global-spacing(2em, 1em);
+
       p {
         width: 100%;
+      }
+    }
+
+    .blog {
+      .card-img {
+        height: calc(506px / 1.75);
+      }
+    }
+
+    .article {
+      .card-img {
+        height: calc(506px / 1.2);
       }
     }
   }
