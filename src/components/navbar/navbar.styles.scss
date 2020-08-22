@@ -1,6 +1,6 @@
 @import '../../partials.scss';
 
-$menu-btn-width: 2em;
+$menu-btn-width: 30px;
 $navbar-bg: rgba(255, 255, 255, 0.9);
 
 @mixin menu-btn_lines {
@@ -41,10 +41,6 @@ $navbar-bg: rgba(255, 255, 255, 0.9);
     .menu,
     .search_icon-wrapper {
       @include flex-position($horizontal: flex-end);
-    }
-
-    li:not(:first-child) {
-      margin-left: 5%;
     }
   }
 

@@ -31,7 +31,7 @@ const Navbar = ({ isMobile }) => {
   );
 
   return (
-    <nav className='navbar'>
+    <nav className={`navbar ${isMobile ? 'mobile' : ''}`}>
       <div className='logo-wrapper'>
         <Link to='/'>
           <Logo />
