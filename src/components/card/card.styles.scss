@@ -3,6 +3,13 @@
 .card {
   .card-wrap {
     position: relative;
+    cursor: pointer;
+
+    &:hover {
+      .card-img {
+        filter: brightness(0.5) blur(1px);
+      }
+    }
 
     img {
       width: 100%;
@@ -14,6 +21,7 @@
       max-height: calc(520px * 1.2);
       background-size: cover;
       background-position: top center;
+      transition: all 0.3s ease-in;
     }
 
     .card-content {

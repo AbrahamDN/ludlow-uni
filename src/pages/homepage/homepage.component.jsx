@@ -53,8 +53,19 @@ const Homepage = ({ isMobile }) => {
         </div>
       </section>
 
-      <section>
-        <h1>Section</h1>
+      <section className='banner'>
+        <div className='cta_banner-section'>
+          <div className={isMobile ? 'mobile' : ''}>
+            <hr />
+            <br />
+            <h2>
+              Come along to one of our Open Days and find out everything you
+              need to know about the campus, courses, and facilities
+            </h2>
+            <br />
+            <button>Book an Open Day</button>
+          </div>
+        </div>
       </section>
 
       <section>

@@ -92,6 +92,44 @@
     }
   }
 
+  .banner {
+    @include page-wrapper-padding($x: 0);
+    padding-bottom: 0;
+
+    .cta_banner-section {
+      background-color: $slate;
+      background-image: url('/assets/jpg/cta-banner-image.jpg');
+      background-position: center;
+      background-size: cover;
+      background-blend-mode: overlay;
+      min-height: 415px;
+      color: $white;
+      @include global-spacing(8em);
+      @include flex-position(center, center);
+
+      & > div {
+        text-align: center;
+        @include flex-position(center, space-between);
+        flex-direction: column;
+        width: 60%;
+
+        &.mobile {
+          width: 100%;
+          text-align: left;
+          @include flex-position(flex-start);
+
+          h2 {
+            margin: 2rem 0;
+          }
+        }
+
+        h2 {
+          margin: 1rem 0 1.5rem;
+        }
+      }
+    }
+  }
+
   // ====================================================================== //
   // Mobile
   // ====================================================================== //
@@ -176,39 +214,6 @@
 
 // section {
 //   @include global-spacing(5%);
-// }
-
-// .cta_banner-section {
-//   background-color: $slate;
-//   background-image: url('/assets/jpg/cta-banner-image.jpg');
-//   background-position: center;
-//   background-size: cover;
-//   background-blend-mode: overlay;
-//   min-height: 415px;
-//   color: $white;
-//   @include global-spacing(8em);
-//   @include flex-position(center, center);
-
-//   & > div {
-//     text-align: center;
-//     @include flex-position(center, space-between);
-//     flex-direction: column;
-//     width: 60%;
-
-//     &.mobile {
-//       width: 100%;
-//       text-align: left;
-//       @include flex-position(flex-start);
-
-//       h2 {
-//         margin: 2rem 0;
-//       }
-//     }
-
-//     h2 {
-//       margin: 1rem 0 1.5rem;
-//     }
-//   }
 // }
 
 // .events-section {
