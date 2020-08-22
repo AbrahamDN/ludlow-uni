@@ -9,20 +9,17 @@ $cool-frost: linear-gradient(98.01deg, #2dc5f5 14.16%, $teal 79.91%);
 $gb-pd-vertical: 1em;
 $gb-pd-horizontal: 5%;
 
-@mixin flex-position($vertical: auto, $horizontal: auto) {
+@mixin flex-position($y: auto, $x: auto) {
   display: flex;
-  align-items: $vertical;
-  justify-content: $horizontal;
+  align-items: $y;
+  justify-content: $x;
   flex-wrap: wrap;
 }
 
-@mixin global-spacing(
-  $verticle: $gb-pd-vertical,
-  $horizontal: $gb-pd-horizontal
-) {
-  padding: $verticle $horizontal;
+@mixin global-spacing($verticle: $gb-pd-vertical, $x: $gb-pd-horizontal) {
+  padding: $verticle $x;
 }
 
-@mixin page-wrapper-padding($verticle: var(--navbar-height), $horizontal: 0) {
-  padding: $verticle $horizontal;
+@mixin page-wrapper-padding($verticle: var(--navbar-height), $x: 0) {
+  padding: $verticle $x;
 }

@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { ReactComponent as Logo } from '../../svg/logo.svg';
+
+import logo from '../../svg/logo.svg';
 import { ReactComponent as SearchIcon } from '../../svg/search-icon.svg';
 
 import './navbar.styles.scss';
@@ -32,9 +33,9 @@ const Navbar = ({ isMobile }) => {
 
   return (
     <nav className={`navbar ${isMobile ? 'mobile' : ''}`}>
-      <div className='logo-wrapper'>
+      <div className='logo'>
         <Link to='/'>
-          <Logo />
+          <img src={logo} alt='Logo' />
         </Link>
       </div>
       <div className='navLists'>

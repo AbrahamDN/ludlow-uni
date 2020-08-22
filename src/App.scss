@@ -8,6 +8,12 @@
   position: relative;
 }
 
+.logo {
+  img {
+    width: 8em;
+  }
+}
+
 .page-wrapper {
   @include page-wrapper-padding();
 }

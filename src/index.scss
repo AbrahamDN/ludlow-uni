@@ -89,7 +89,7 @@ button {
   background: $white;
   width: fit-content;
   height: fit-content;
-  @include global-spacing($horizontal: 15%);
+  @include global-spacing($x: 15%);
   border: none;
   background: rgba(255, 255, 255, 0);
   position: relative;

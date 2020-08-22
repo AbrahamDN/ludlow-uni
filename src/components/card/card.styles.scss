@@ -18,22 +18,24 @@
 
     .card-content {
       background: $white;
-      width: 60%;
+      width: 29vw;
       min-width: 245px;
       margin-top: -5em;
-      margin-left: -1pt;
-      @include global-spacing();
+      margin-left: -2px;
+      @include global-spacing(2em, 2em);
       position: relative;
 
-      a h3::after {
-        content: url('../../svg/arrow.svg');
-        position: absolute;
-        margin-left: 1em;
+      span {
+        @include flex-position(center);
+        img {
+          width: 1em;
+          margin-left: 1em;
+        }
       }
 
       p {
         margin-top: 1em;
-        // width: calc(35ch - 10%);
+        width: calc(100% + 1em);
       }
     }
 

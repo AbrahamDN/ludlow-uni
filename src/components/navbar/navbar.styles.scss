@@ -22,13 +22,14 @@ $navbar-bg: rgba(255, 255, 255, 0.9);
   z-index: 999;
 
   ul,
-  .logo-wrapper,
+  .logo,
   .search_icon-wrapper,
   .menu {
     @include flex-position(center);
   }
 
-  svg {
+  svg,
+  .logo {
     cursor: pointer;
   }
 
@@ -40,7 +41,11 @@ $navbar-bg: rgba(255, 255, 255, 0.9);
     ul,
     .menu,
     .search_icon-wrapper {
-      @include flex-position($horizontal: flex-end);
+      @include flex-position($x: flex-end);
+    }
+
+    li:not(:first-child) {
+      margin-left: 5%;
     }
   }
 
