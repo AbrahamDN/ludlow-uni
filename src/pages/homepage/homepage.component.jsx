@@ -55,7 +55,7 @@ const Homepage = ({ isMobile }) => {
 
       <section className='banner'>
         <div className='cta_banner-section'>
-          <div className={isMobile ? 'mobile' : ''}>
+          <div>
             <hr />
             <br />
             <h2>
@@ -68,8 +68,14 @@ const Homepage = ({ isMobile }) => {
         </div>
       </section>
 
-      <section>
-        <h1>Section</h1>
+      <section className='events-section'>
+        <div>
+          <h2>Upcoming events</h2>
+          <button>View all events</button>
+        </div>
+        <div className={`card-wrapper ${isMobile ? 'mobile' : ''}`}>
+          {mapCardComponents(EVENTS_DATA)}
+        </div>
       </section>
     </div>
   );

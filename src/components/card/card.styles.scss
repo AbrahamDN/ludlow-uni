@@ -50,14 +50,15 @@
     &.article {
       .card-img {
         height: calc(506px * 1.2);
+        min-height: 60vh;
       }
 
       .card-content {
-        width: 102%;
+        width: 101%;
         margin: 0;
         margin-left: -2px;
         position: absolute;
-        bottom: 0;
+        bottom: -1px;
       }
     }
 
@@ -69,21 +70,26 @@
         position: absolute;
         text-align: center;
         background: $white;
-        @include global-spacing(2em, 4em);
+        margin: -1px;
+        @include global-spacing(1.5em, 3em);
+
+        h1,
+        h2 {
+          font-weight: 300;
+        }
 
         h1 {
           color: $pink;
         }
 
         h2 {
-          font-weight: lighter;
           color: $slate;
         }
       }
 
       .card-img {
-        height: 90vh;
-        max-height: inherit;
+        height: 80vh;
+        min-height: 80vh;
         background-position: top center;
       }
       .card-content {

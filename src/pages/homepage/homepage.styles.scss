@@ -51,7 +51,22 @@
   section {
     @include page-wrapper-padding($x: $gb-pd-horizontal);
     padding-bottom: 0;
-    border-bottom: 2px solid black;
+  }
+
+  .articles-section,
+  .events-section {
+    .card-wrapper {
+      @include responsiveGrid();
+
+      &.mobile {
+        grid-template-columns: 1fr;
+
+        & > div:last-child {
+          grid-column: auto;
+          grid-row: auto;
+        }
+      }
+    }
   }
 
   .cards-section {
@@ -66,22 +81,6 @@
 
         &.mobile {
           grid-template-columns: 1fr;
-        }
-      }
-    }
-
-    .articles-section,
-    .events-section {
-      .card-wrapper {
-        @include responsiveGrid();
-
-        &.mobile {
-          grid-template-columns: 1fr;
-
-          & > div:last-child {
-            grid-column: auto;
-            grid-row: auto;
-          }
         }
       }
     }
@@ -130,6 +129,16 @@
     }
   }
 
+  .events-section {
+    & > div:nth-child(1) {
+      @include flex-position($x: space-between);
+    }
+
+    .card-wrapper {
+      @include global-spacing(2em 0);
+    }
+  }
+
   // ====================================================================== //
   // Mobile
   // ====================================================================== //
@@ -152,6 +161,20 @@
       }
     }
 
+    .banner {
+      .cta_banner-section {
+        & > div {
+          width: 100%;
+          text-align: left;
+          @include flex-position(flex-start);
+
+          h2 {
+            margin: 2rem 0;
+          }
+        }
+      }
+    }
+
     .articles-section {
       .card-wrapper {
         grid-template-columns: 1fr;
@@ -163,68 +186,15 @@
         }
       }
     }
+
+    .events-section {
+      button {
+        margin: 1em 0;
+      }
+
+      & > div:nth-child(1) {
+        margin: 1em 0;
+      }
+    }
   }
 }
-
-// .header {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-//   grid-gap: 2em;
-//   min-height: 90vh;
-//   max-height: 1024px;
-//   width: 100%;
-//   @include global-spacing();
-
-//   .header-content {
-//     @include flex-position(center, center);
-
-//     .header-content-wrap {
-//       display: grid;
-//       grid-gap: 2em;
-//     }
-//   }
-
-//   .header-hero,
-//   .hero-content {
-//     height: 100%;
-//   }
-
-//   .first_grid {
-//     grid-row: 1;
-//     padding-top: 5%;
-//   }
-
-//   .hero-content {
-//     object-fit: contain;
-//     background-size: cover;
-//     background-position: center 20%;
-//     min-height: calc(624px / 2);
-//     position: relative;
-//     overflow: hidden;
-//     @include flex-position(center, center);
-
-//     .hero-img {
-//       width: 100%;
-//       object-fit: cover;
-//       object-position: top center;
-//       height: -webkit-fill-available;
-//     }
-//   }
-// }
-
-// section {
-//   @include global-spacing(5%);
-// }
-
-// .events-section {
-//   & > div:nth-child(1) {
-//     @include flex-position($x: space-between);
-//     @include global-spacing(4em 0);
-
-//     &.mobile {
-//       button {
-//         margin: 1em 0;
-//       }
-//     }
-//   }
-// }
