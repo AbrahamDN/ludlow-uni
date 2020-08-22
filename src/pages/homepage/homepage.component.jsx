@@ -10,24 +10,30 @@ const Homepage = ({ isMobile }) => {
   };
 
   return (
-    <div className='homepage'>
+    <div className={`homepage ${isMobile ? 'mobile' : ''}`}>
       <header className='header'>
         <div className='header-content'>
-          <div className='header-content-wrap'>
+          <div>
             <h1>Student Life</h1>
+            <br />
+            <br />
             <h2>
               There is so much going on at Ludlow University, both on and off
               campus.
             </h2>
+            <br />
+            <br />
             <div className='info'>
               <h3>Lisa Smith</h3>
               <p>Student, BSc (Hons) Computer Games Design</p>
             </div>
+            <br />
+            <br />
             <button>View student stories</button>
           </div>
         </div>
-        <div className={`header-hero ${isMobile ? 'first_grid' : ''}`}>
-          <div className='hero-content'>
+        <div className='header-hero'>
+          <div>
             <img
               className='hero-img'
               src='/assets/jpg/hero-image.jpg'
@@ -37,31 +43,33 @@ const Homepage = ({ isMobile }) => {
         </div>
       </header>
 
-      <section className='blog-section'>
-        <div className={`card-wrapper ${isMobile ? 'mobile' : ''}`}>
-          {mapCardComponents(BLOGS_DATA)}
+      <section className='cards-section'>
+        <div className='blog-section'>
+          <div className='card-wrapper'>{mapCardComponents(BLOGS_DATA)}</div>
+        </div>
+
+        <div className='articles-section'>
+          <div className='card-wrapper'>{mapCardComponents(ARTICLES_DATA)}</div>
         </div>
       </section>
 
-      <section className='articles-section'>
-        <div className={`card-wrapper ${isMobile ? 'mobile' : ''}`}>
-          {mapCardComponents(ARTICLES_DATA)}
-        </div>
-      </section>
-
-      <section className='cta_banner-section'>
-        <div className={isMobile ? 'mobile' : ''}>
-          <hr />
-          <h2>
-            Come along to one of our Open Days and find out everything you need
-            to know about the campus, courses, and facilities
-          </h2>
-          <button>Book an Open Day</button>
+      <section className='banner'>
+        <div className='cta_banner-section'>
+          <div>
+            <hr />
+            <br />
+            <h2>
+              Come along to one of our Open Days and find out everything you
+              need to know about the campus, courses, and facilities
+            </h2>
+            <br />
+            <button>Book an Open Day</button>
+          </div>
         </div>
       </section>
 
       <section className='events-section'>
-        <div className={isMobile ? 'mobile' : ''}>
+        <div>
           <h2>Upcoming events</h2>
           <button>View all events</button>
         </div>
@@ -137,3 +145,64 @@ const mapStateToProps = state => ({
   isMobile: state.isMobile,
 });
 export default connect(mapStateToProps)(Homepage);
+
+/*
+<header className='header'>
+        <div className='header-content'>
+          <div className='header-content-wrap'>
+            <h1>Student Life</h1>
+            <h2>
+              There is so much going on at Ludlow University, both on and off
+              campus.
+            </h2>
+            <div className='info'>
+              <h3>Lisa Smith</h3>
+              <p>Student, BSc (Hons) Computer Games Design</p>
+            </div>
+            <button>View student stories</button>
+          </div>
+        </div>
+        <div className={`header-hero ${isMobile ? 'first_grid' : ''}`}>
+          <div className='hero-content'>
+            <img
+              className='hero-img'
+              src='/assets/jpg/hero-image.jpg'
+              alt='Hero'
+            />
+          </div>
+        </div>
+      </header>
+
+      <section className='blog-section'>
+        <div className={`card-wrapper ${isMobile ? 'mobile' : ''}`}>
+          {mapCardComponents(BLOGS_DATA)}
+        </div>
+      </section>
+
+      <section className='articles-section'>
+        <div className={`card-wrapper ${isMobile ? 'mobile' : ''}`}>
+          {mapCardComponents(ARTICLES_DATA)}
+        </div>
+      </section>
+
+      <section className='cta_banner-section'>
+        <div className={isMobile ? 'mobile' : ''}>
+          <hr />
+          <h2>
+            Come along to one of our Open Days and find out everything you need
+            to know about the campus, courses, and facilities
+          </h2>
+          <button>Book an Open Day</button>
+        </div>
+      </section>
+
+      <section className='events-section'>
+        <div className={isMobile ? 'mobile' : ''}>
+          <h2>Upcoming events</h2>
+          <button>View all events</button>
+        </div>
+        <div className={`card-wrapper ${isMobile ? 'mobile' : ''}`}>
+          {mapCardComponents(EVENTS_DATA)}
+        </div>
+      </section>
+*/

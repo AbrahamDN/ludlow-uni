@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './footer.styles.scss';
 
-import { ReactComponent as Logo } from '../../svg/logo.svg';
+import logo from '../../svg/logo.svg';
 import twitter from '../../svg/Social/Twitter.svg';
 import linkedIn from '../../svg/Social/Linkedin.svg';
 import google from '../../svg/Social/Google.svg';
@@ -11,11 +11,11 @@ import facebook from '../../svg/Social/Facebook.svg';
 
 const Footer = ({ isMobile }) => {
   return (
-    <div className='footer'>
-      <div className={`footer-content ${isMobile ? 'mobile' : ''}`}>
+    <div className={`footer ${isMobile ? 'mobile' : ''}`}>
+      <div className='footer-content'>
         <div>
-          <div>
-            <Logo />
+          <div className='logo'>
+            <img src={logo} alt='Logo' />
           </div>
           <div className='footer-twitter'>
             <img src='/assets/png/Twitter embed.png' alt='Twitter embed' />

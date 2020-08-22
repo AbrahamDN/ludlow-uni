@@ -3,6 +3,13 @@
 .card {
   .card-wrap {
     position: relative;
+    cursor: pointer;
+
+    &:hover {
+      .card-img {
+        filter: brightness(0.5) blur(1px);
+      }
+    }
 
     img {
       width: 100%;
@@ -14,33 +21,44 @@
       max-height: calc(520px * 1.2);
       background-size: cover;
       background-position: top center;
+      transition: all 0.3s ease-in;
     }
 
     .card-content {
       background: $white;
-      width: 60%;
+      width: 29vw;
       min-width: 245px;
       margin-top: -5em;
-      margin-left: -1pt;
-      @include global-spacing();
+      margin-left: -2px;
+      @include global-spacing(2em, 2em);
       position: relative;
 
-      a h3::after {
-        content: url('../../svg/arrow.svg');
-        position: absolute;
-        margin-left: 1em;
+      span {
+        @include flex-position(center);
+        img {
+          width: 1em;
+          margin-left: 1em;
+        }
       }
 
       p {
         margin-top: 1em;
-        // width: calc(35ch - 10%);
+        width: calc(100% + 1em);
       }
     }
 
     &.article {
+      .card-img {
+        height: calc(506px * 1.2);
+        min-height: 60vh;
+      }
+
       .card-content {
-        width: 100%;
+        width: 101%;
         margin: 0;
+        margin-left: -2px;
+        position: absolute;
+        bottom: -1px;
       }
     }
 
@@ -52,21 +70,26 @@
         position: absolute;
         text-align: center;
         background: $white;
-        @include global-spacing(2em, 4em);
+        margin: -1px;
+        @include global-spacing(1.5em, 3em);
+
+        h1,
+        h2 {
+          font-weight: 300;
+        }
 
         h1 {
           color: $pink;
         }
 
         h2 {
-          font-weight: lighter;
           color: $slate;
         }
       }
 
       .card-img {
-        height: 90vh;
-        max-height: inherit;
+        height: 80vh;
+        min-height: 80vh;
         background-position: top center;
       }
       .card-content {
@@ -80,12 +103,26 @@
     }
   }
 
-  .mobile {
-    &.card-content {
+  &.mobile {
+    .card-content {
       margin-top: 0;
       width: 100%;
+      @include global-spacing(2em, 1em);
+
       p {
         width: 100%;
+      }
+    }
+
+    .blog {
+      .card-img {
+        height: calc(506px / 1.75);
+      }
+    }
+
+    .article {
+      .card-img {
+        height: calc(506px / 1.2);
       }
     }
   }

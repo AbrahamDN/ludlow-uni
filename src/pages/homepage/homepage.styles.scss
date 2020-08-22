@@ -6,144 +6,193 @@
   grid-gap: 2em;
 }
 
-.header {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 2em;
-  min-height: 90vh;
-  max-height: 1024px;
-  width: 100%;
-  @include global-spacing();
-
-  .header-content {
-    @include flex-position(center, center);
-
-    .header-content-wrap {
-      display: grid;
-      grid-gap: 2em;
-    }
+.homepage {
+  section {
+    width: 100vw;
+    min-height: var(--vh);
+    min-height: -webkit-fill-available;
   }
 
-  .header-hero,
-  .hero-content {
-    height: 100%;
-  }
-
-  .first_grid {
-    grid-row: 1;
-    padding-top: 5%;
-  }
-
-  .hero-content {
-    object-fit: contain;
-    background-size: cover;
-    background-position: center 20%;
-    min-height: calc(624px / 2);
-    position: relative;
-    overflow: hidden;
-    @include flex-position(center, center);
-
-    &::after {
-      content: url('../../svg/logo-badge.svg');
-      position: absolute;
-      top: 1em;
-      left: 5%;
-    }
-
-    .hero-img {
-      width: 100%;
-      object-fit: cover;
-      object-position: top center;
-      height: -webkit-fill-available;
-    }
-  }
-}
-
-section {
-  @include global-spacing(5%);
-}
-
-.blog-section {
-  padding-top: 5em;
-  .card-wrapper {
+  .header {
+    @include global-spacing();
     display: grid;
-    grid-template-columns: 1fr fit-content(40%);
+    grid-template-columns: 44% 54%;
     grid-gap: 2em;
 
-    &.mobile {
-      grid-template-columns: 1fr;
-    }
-  }
-}
-
-.articles-section,
-.events-section {
-  .card-wrapper {
-    @include responsiveGrid();
-
-    &.mobile {
-      grid-template-columns: 1fr;
-
-      & > div:last-child {
-        grid-column: auto;
-        grid-row: auto;
-      }
-    }
-
-    @media screen and (max-width: 820px) {
-      & > div:last-child {
-        grid-column: 1/3;
-        grid-row: 3;
-      }
-    }
-  }
-}
-.articles-section {
-  &.mobile {
-    grid-template-columns: 1fr;
-  }
-}
-
-.cta_banner-section {
-  background-color: $slate;
-  background-image: url('/assets/jpg/cta-banner-image.jpg');
-  background-position: center;
-  background-size: cover;
-  background-blend-mode: overlay;
-  min-height: 415px;
-  color: $white;
-  @include global-spacing(8em);
-  @include flex-position(center, center);
-
-  & > div {
-    text-align: center;
-    @include flex-position(center, space-between);
-    flex-direction: column;
-    width: 60%;
-
-    &.mobile {
+    img,
+    .header-hero div {
       width: 100%;
-      text-align: left;
-      @include flex-position(flex-start);
+    }
 
-      h2 {
-        margin: 2rem 0;
+    .header-content {
+      @include flex-position(center);
+    }
+
+    .header-hero {
+      width: 100%;
+      max-height: 40em;
+      overflow: hidden;
+      position: relative;
+
+      & > div {
+        height: calc(var(--header-height) + 10vw);
+        overflow: hidden;
+      }
+
+      &::after {
+        content: url('../../svg/logo-badge.svg');
+        position: absolute;
+        top: 1em;
+        left: 5%;
+      }
+    }
+  }
+
+  section {
+    @include page-wrapper-padding($x: $gb-pd-horizontal);
+    padding-bottom: 0;
+  }
+
+  .articles-section,
+  .events-section {
+    .card-wrapper {
+      @include responsiveGrid();
+
+      &.mobile {
+        grid-template-columns: 1fr;
+
+        & > div:last-child {
+          grid-column: auto;
+          grid-row: auto;
+        }
+      }
+    }
+  }
+
+  .cards-section {
+    @include page-wrapper-padding($x: 5%);
+    padding-bottom: 0;
+
+    .blog-section {
+      .card-wrapper {
+        display: grid;
+        grid-template-columns: 54% 44%;
+        grid-gap: 2em;
+
+        &.mobile {
+          grid-template-columns: 1fr;
+        }
       }
     }
 
-    h2 {
-      margin: 1rem 0 1.5rem;
+    .articles-section {
+      @include page-wrapper-padding();
+      padding-bottom: 0;
     }
   }
-}
 
-.events-section {
-  & > div:nth-child(1) {
-    @include flex-position($horizontal: space-between);
-    @include global-spacing(4em 0);
+  .banner {
+    @include page-wrapper-padding($x: 0);
+    padding-bottom: 0;
 
-    &.mobile {
+    .cta_banner-section {
+      background-color: $slate;
+      background-image: url('/assets/jpg/cta-banner-image.jpg');
+      background-position: center;
+      background-size: cover;
+      background-blend-mode: overlay;
+      min-height: 415px;
+      color: $white;
+      @include global-spacing(8em);
+      @include flex-position(center, center);
+
+      & > div {
+        text-align: center;
+        @include flex-position(center, space-between);
+        flex-direction: column;
+        width: 60%;
+
+        &.mobile {
+          width: 100%;
+          text-align: left;
+          @include flex-position(flex-start);
+
+          h2 {
+            margin: 2rem 0;
+          }
+        }
+
+        h2 {
+          margin: 1rem 0 1.5rem;
+        }
+      }
+    }
+  }
+
+  .events-section {
+    & > div:nth-child(1) {
+      @include flex-position($x: space-between);
+    }
+
+    .card-wrapper {
+      @include global-spacing(2em 0);
+    }
+  }
+
+  // ====================================================================== //
+  // Mobile
+  // ====================================================================== //
+  &.mobile {
+    .header {
+      grid-template-columns: auto;
+
+      .header-hero {
+        grid-row: 1;
+        min-height: 250px;
+        max-height: 40vh;
+      }
+    }
+
+    .cards-section {
+      .blog-section {
+        .card-wrapper {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+
+    .banner {
+      .cta_banner-section {
+        & > div {
+          width: 100%;
+          text-align: left;
+          @include flex-position(flex-start);
+
+          h2 {
+            margin: 2rem 0;
+          }
+        }
+      }
+    }
+
+    .articles-section {
+      .card-wrapper {
+        grid-template-columns: 1fr;
+
+        & > div:last-child {
+          .card-img {
+            background-position: bottom center;
+          }
+        }
+      }
+    }
+
+    .events-section {
       button {
+        margin: 1em 0;
+      }
+
+      & > div:nth-child(1) {
         margin: 1em 0;
       }
     }
