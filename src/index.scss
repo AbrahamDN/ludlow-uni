@@ -78,10 +78,6 @@ hr {
   border-image-slice: 1;
 }
 
-img {
-  width: 100%;
-}
-
 button {
   $borderPositionCalc: -1px;
   $borderSizeCalc: calc(100% + 2px);

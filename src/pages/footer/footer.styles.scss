@@ -4,33 +4,52 @@
   @include global-spacing(6%);
   background: url('../../svg/logo-icon-transparent.svg') no-repeat;
   background-position: 10% 0%;
-  background-size: 50%;
+  background-size: 30vw;
   border-top: 2px solid rgba(53, 95, 143, 0.1);
+
+  img {
+    cursor: pointer;
+  }
 
   .footer-content {
     & > div:first-child {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+    }
+
+    .footer-twitter {
+      @include flex-position(center);
+      img {
+        width: 30vmax;
+      }
+    }
+
+    .footer-socials-list {
+      img {
+        width: 2vmax;
+
+        &:not(:first-child) {
+          margin-left: 1em;
+        }
+      }
+    }
+  }
+
+  &.mobile {
+    background-size: 50%;
+
+    .footer-twitter {
+      width: -webkit-fill-available;
 
       img {
         width: 100%;
       }
     }
 
-    .footer-twitter {
-      @include flex-position(center);
-    }
-
     .footer-socials-list {
-      img:not(:first-child) {
-        margin-left: 1em;
-      }
-    }
-
-    &.mobile {
-      .footer-twitter {
-        width: -webkit-fill-available;
+      img {
+        width: initial;
       }
     }
   }
