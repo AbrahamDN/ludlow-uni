@@ -11,7 +11,7 @@ import './App.scss';
 
 import Navbar from './components/navbar/navbar.component';
 import Homepage from './pages/homepage/homepage.component';
-import Footer from './pages/footer/footer.component';
+import Footer from './components/footer/footer.componentonent';
 
 const App = ({ dispatchIsMobile, dispatchIsNotMobile }) => {
   const [windowSize, setWindowSize] = useState(window.innerWidth);
